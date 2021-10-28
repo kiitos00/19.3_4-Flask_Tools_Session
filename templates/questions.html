@@ -9,14 +9,13 @@
 
 {% block body %}
 
-<h1>{{question}}</h1>
+<h1>{{questions.question}}</h1>
 <p>{{survey.instructions}}</p>
 
 <form method="POST" action="/answer">
-  {% for option in question.choice %}
+  {% for option in questions.choices %}
   <button type="radio" name="answer" value="{{option}}">{{option}}</button>
-  {% endfor %}
-  <button>Next question</button>
+  {% endfor %}<br><hr>
 </form>
 
 {% endblock %}
